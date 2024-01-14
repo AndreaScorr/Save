@@ -1,0 +1,22 @@
+<launch>
+
+  <!-- Start the robot_control node from the robot_controller package -->
+  <node
+    name="robot_control"
+    pkg="robot_controller"
+    type="robot_control"
+    respawn="true"   <!-- Enables automatic restart -->
+    output="screen"
+  />
+
+  <!-- Include the hello.launch file from the tutorial_pkg package -->
+  <include file="$(find tutorial_pkg)/launch/hello.launch" />
+
+</launch>
+
+<!--   
+write a launch file that:
+-starts the node "robot_control" of the package "robot controller"
+-include the launch file "hello.launch" contained in the package "tutorial_pkg"
+Additionally, you want to automatically restart the node "robot_control" if it quits
+-->
